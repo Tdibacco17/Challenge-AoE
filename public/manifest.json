@@ -1,0 +1,21 @@
+{
+    "name": "Desafio React",
+    "short_name": "Desafio React",
+    "description": "Desafio React",
+    "icons": [
+        {
+            "src": "/favicon.ico",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#FFFFFF",
+    "background_color": "#FFFFFF",
+    "author": {
+        "name": "Tomás Di Bacco",
+        "url": "https://www.linkedin.com/in/tomas-di-bacco/"
+    }
+}
