@@ -5,6 +5,6 @@ export const roboto = Roboto({
     weight: ['300', '500', '700'],
     style: 'normal',
     preload: true,
-    variable: '--font-myFont',
+    variable: '--font-Roboto',
     display: 'swap'
 })

@@ -3,12 +3,12 @@
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
   --calc-rem: calc(14px + (20.56 - 14) * ((100vw - 280px) / (3840 - 280)));
-  --weight-regular: 300;
-  --weight-medium: 500;
-  --weight-bold: 700;
   --max-width: 1300px;
-  --primary-color: rgb(255, 255, 255);
+  --primary-white: rgb(255, 255, 255);
+  --primary-hover: rgb(255, 255, 255, 0.7);
   --secondary-color: rgba(0, 0, 0);
+  --border-color: #333;
+  --hover-color: rgba(255, 255, 255, 0.1);
 }
 
 * {
@@ -23,16 +23,16 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  font-family: var(--font-fallback);
+  font-family: var(--font-Roboto), var(--font-fallback);
   font-size: var(--calc-rem);
-  font-weight: var(--weight-regular);
+  font-weight: 500;
 }
 
 body {
   padding: 0;
   margin: 0;
   background-color: var(--secondary-color);
-  color: var(--primary-color);
+  color: var(--primary-white);
 }
 
 body::-webkit-scrollbar {

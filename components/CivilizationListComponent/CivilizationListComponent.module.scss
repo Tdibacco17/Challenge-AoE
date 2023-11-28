@@ -1,0 +1,26 @@
+.container-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .item-list {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        padding: 1rem;
+        align-items: center;
+        font-size: 1rem;
+        color: var(--primary-hover);
+        border-bottom: 1px solid var(--border-color);
+
+        &:hover {
+            background: var(--hover-color);
+            color: var(--primary-white);
+        }
+
+        &.first {
+            border-top: 1px solid var(--border-color);
+        }
+    }
+}

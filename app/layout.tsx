@@ -1,7 +1,10 @@
+import NavigationComponent from '@/components/NavigationComponent/NavigationComponent'
 import './globals.css'
 import { roboto } from '@/utils/fonts'
 import type { Metadata } from 'next'
 import Head from 'next/head'
+import { CivilizationsProvider } from '@/context/CivilizationsContextProvider'
+import { CivilizationDetailProvider } from '@/context/CivilizationDetailContextProvider'
 
 export const metadata: Metadata = {
   title: 'Desafio React',
@@ -34,7 +37,12 @@ export default function RootLayout({
       </Head>
       <body className={roboto.className}>
         <main>
-          {children}
+          <NavigationComponent />
+          <CivilizationsProvider>
+            <CivilizationDetailProvider>
+              {children}
+            </CivilizationDetailProvider>
+          </CivilizationsProvider>
         </main>
       </body>
     </html>
