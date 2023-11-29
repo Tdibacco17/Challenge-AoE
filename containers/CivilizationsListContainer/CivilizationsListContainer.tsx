@@ -3,23 +3,30 @@ import CivilizationListComponent from "@/components/CivilizationListComponent/Ci
 import { CivilizationsContext } from "@/context/CivilizationsContextProvider";
 import { CivilizationDataContextInterface } from "@/types/CivilizationTypes";
 import { fetchDataAndHandle } from "@/utils/loadData";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 
 export default function CivilizationsListContainer() {
-    const { handleCivilizationsDataChange } = useContext(CivilizationsContext) as CivilizationDataContextInterface
+    const { civilizationsData, handleCivilizationsDataChange } = useContext(CivilizationsContext) as CivilizationDataContextInterface
+    const [loading, setLoading] = useState<boolean>(!civilizationsData);
+
     useEffect(() => {
         const fetchData = async () => {
-            const result = await fetchDataAndHandle();
-
-            if (result !== null) {
+            try {
+                const result = await fetchDataAndHandle();
                 handleCivilizationsDataChange(result);
-            } else {
+                //si la request falla seteo en undefined 
+                if (!result) {
+                    handleCivilizationsDataChange(undefined);
+                }
+            } catch (error) {
+                // console.error("Error fetching data:", error);
                 handleCivilizationsDataChange(undefined);
+            } finally {
+                setLoading(false);
             }
         };
-
         fetchData();
     }, []);
 
-    return <CivilizationListComponent />
+    return <CivilizationListComponent loading={loading} />
 }
