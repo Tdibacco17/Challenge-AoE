@@ -1,5 +1,5 @@
 'use client'
-import { CivilizationDataContextInterface, CivilizationInterface } from "@/types/CivilizationTypes";
+import { CivilizationDataContextInterface, CivilizationInterface } from "@/types/civilizationTypes";
 import { ReactNode, createContext, useState } from "react";
 
 export const CivilizationsContext = createContext<CivilizationDataContextInterface | {}>({});

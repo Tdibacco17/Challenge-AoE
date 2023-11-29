@@ -1,4 +1,4 @@
-import { CivilizationInterface } from "./CivilizationTypes";
+import { CivilizationInterface } from "./civilizationTypes";
 
 export interface ResponseInterface {
     message: string,

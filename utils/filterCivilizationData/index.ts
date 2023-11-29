@@ -1,4 +1,4 @@
-import { CivilizationInterface, HandleCivilizationDetailProps } from "@/types/CivilizationTypes";
+import { CivilizationInterface, HandleCivilizationDetailProps } from "@/types/civilizationTypes";
 
 export const handleCivilizationDetail = ({
     civilizationsData,

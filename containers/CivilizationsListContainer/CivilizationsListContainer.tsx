@@ -1,7 +1,7 @@
 'use client'
 import CivilizationListComponent from "@/components/CivilizationListComponent/CivilizationListComponent";
 import { CivilizationsContext } from "@/context/CivilizationsContextProvider";
-import { CivilizationDataContextInterface } from "@/types/CivilizationTypes";
+import { CivilizationDataContextInterface } from "@/types/civilizationTypes";
 import { fetchCivilizationsData } from "@/utils/fetchFunctions";
 import { useContext, useEffect, useState } from "react";
 

@@ -2,7 +2,7 @@
 import CivilizationDetailComponent from "@/components/CivilizationDetailComponent/CivilizationDetailComponent";
 import { CivilizationDetailContext } from "@/context/CivilizationDetailContextProvider";
 import { CivilizationsContext } from "@/context/CivilizationsContextProvider";
-import { CivilizationDataContextInterface } from "@/types/CivilizationTypes";
+import { CivilizationDataContextInterface } from "@/types/civilizationTypes";
 import { fetchCivilizationsData } from "@/utils/fetchFunctions";
 import { handleCivilizationDetail } from "@/utils/filterCivilizationData";
 import { useContext, useEffect, useState } from "react";

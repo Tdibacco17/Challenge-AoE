@@ -1,4 +1,4 @@
-import { CivilizationDataContextInterface, CivilizationInterface } from "@/types/CivilizationTypes"
+import { CivilizationDataContextInterface, CivilizationInterface } from "@/types/civilizationTypes"
 import styles from "./CivilizationListComponent.module.scss"
 import { CivilizationsContext } from "@/context/CivilizationsContextProvider"
 import { useContext } from "react"

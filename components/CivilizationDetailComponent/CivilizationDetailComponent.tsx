@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import styles from "./CivilizationDetailComponent.module.scss"
 import { CivilizationDetailContext } from "@/context/CivilizationDetailContextProvider"
-import { CivilizationDataContextInterface } from "@/types/CivilizationTypes"
+import { CivilizationDataContextInterface } from "@/types/civilizationTypes"
 import LoadingCardDetails from "../LoadingCardDetails/LoadingCardDetails"
 export default function CivilizationDetailComponent({ loading }: { loading: boolean }) {
     const { civilizationData } = useContext(CivilizationDetailContext) as CivilizationDataContextInterface
