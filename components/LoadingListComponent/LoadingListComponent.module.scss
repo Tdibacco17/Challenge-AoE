@@ -1,0 +1,30 @@
+.container-skeleton-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .item-list {
+        width: 100%;
+        min-height: 3rem;
+        max-height: 3rem;
+
+        &.color {
+            background-color: var(--border-color);
+            animation: pulse 1.5s infinite;
+        }
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.6;
+    }
+}

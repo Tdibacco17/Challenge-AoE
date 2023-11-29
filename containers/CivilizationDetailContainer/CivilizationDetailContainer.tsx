@@ -19,7 +19,7 @@ export default function CivilizationDetailContainer({ params }: { params: { slug
             if (result.length > 0) {
                 handleCivilizationDetailDataChange(result[0])
             } else {
-                handleCivilizationDetailDataChange([])
+                handleCivilizationDetailDataChange(undefined)
             }
         } else { // En caso de refrescar la pagina volver a llamar a la API
             const fetchData = async () => {
@@ -28,7 +28,7 @@ export default function CivilizationDetailContainer({ params }: { params: { slug
                 if (result !== null) {
                     handleCivilizationsDataChange(result);
                 } else {
-                    handleCivilizationsDataChange([]);
+                    handleCivilizationsDataChange(undefined);
                 }
             };
 

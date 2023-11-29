@@ -14,7 +14,7 @@ export default function CivilizationsListContainer() {
             if (result !== null) {
                 handleCivilizationsDataChange(result);
             } else {
-                handleCivilizationsDataChange([]);
+                handleCivilizationsDataChange(undefined);
             }
         };
 

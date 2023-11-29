@@ -1,7 +1,12 @@
 .container-section-detail {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 4rem;
+
+    @media (max-width:442px) {
+        padding: 4rem 0;
+        min-width: 100%;
+        max-width: 100%;
+    }
 }
