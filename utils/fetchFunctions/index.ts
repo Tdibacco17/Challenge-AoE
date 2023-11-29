@@ -1,6 +1,7 @@
 import { ResponseInterface } from "@/types";
+import { FetchCivilizationsDataProps } from "@/types/fetchsTypes";
 
-export async function fetchDataAndHandle() {
+export const fetchDataAndHandle = async () => {
     try {
         //llamado a la api para traer los datos
         const rawData = await fetch("/api/civilizations", {
@@ -21,3 +22,22 @@ export async function fetchDataAndHandle() {
         return null; // Retorna null si explota
     }
 }
+
+export const fetchCivilizationsData = async ({
+    handleCivilizationsDataChange,
+    setLoading
+}: FetchCivilizationsDataProps) => {
+    try {
+        const result = await fetchDataAndHandle();
+        handleCivilizationsDataChange(result);
+        //si la request falla seteo en undefined 
+        if (!result) {
+            handleCivilizationsDataChange(undefined);
+        }
+    } catch (error) {
+        // console.error("Error fetching data:", error);
+        handleCivilizationsDataChange(undefined);
+    } finally {
+        setLoading(false);
+    }
+};

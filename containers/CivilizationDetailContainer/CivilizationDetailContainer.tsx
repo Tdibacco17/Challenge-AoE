@@ -2,39 +2,32 @@
 import CivilizationDetailComponent from "@/components/CivilizationDetailComponent/CivilizationDetailComponent";
 import { CivilizationDetailContext } from "@/context/CivilizationDetailContextProvider";
 import { CivilizationsContext } from "@/context/CivilizationsContextProvider";
-import { CivilizationDataContextInterface, CivilizationInterface } from "@/types/CivilizationTypes";
-import { fetchDataAndHandle } from "@/utils/loadData";
-import { useContext, useEffect } from "react";
+import { CivilizationDataContextInterface } from "@/types/CivilizationTypes";
+import { fetchCivilizationsData } from "@/utils/fetchFunctions";
+import { handleCivilizationDetail } from "@/utils/filterCivilizationData";
+import { useContext, useEffect, useState } from "react";
 
 export default function CivilizationDetailContainer({ params }: { params: { slug: string } }) {
     const { civilizationsData, handleCivilizationsDataChange } = useContext(CivilizationsContext) as CivilizationDataContextInterface
     const { handleCivilizationDetailDataChange } = useContext(CivilizationDetailContext) as CivilizationDataContextInterface
+    const [loading, setLoading] = useState<boolean>(true);
 
-    useEffect(() => {// Filtrar por slug
-        if (civilizationsData && civilizationsData?.length > 0) {
-
-            const result = civilizationsData.filter(
-                (itemData: CivilizationInterface) => itemData.name === params.slug);
-
-            if (result.length > 0) {
-                handleCivilizationDetailDataChange(result[0])
-            } else {
-                handleCivilizationDetailDataChange(undefined)
-            }
+    useEffect(() => {
+        // Filtrar por slug
+        if (civilizationsData) {
+            handleCivilizationDetail({
+                civilizationsData,
+                slug: params.slug,
+                handleCivilizationDetailDataChange,
+                setLoading
+            });
         } else { // En caso de refrescar la pagina volver a llamar a la API
-            const fetchData = async () => {
-                const result = await fetchDataAndHandle();
-
-                if (result !== null) {
-                    handleCivilizationsDataChange(result);
-                } else {
-                    handleCivilizationsDataChange(undefined);
-                }
-            };
-
-            fetchData();
+            fetchCivilizationsData({
+                handleCivilizationsDataChange,
+                setLoading
+            });
         }
-    }, [params.slug, civilizationsData?.length]);
+    }, [params.slug, civilizationsData]);
 
-    return <CivilizationDetailComponent />
+    return <CivilizationDetailComponent loading={loading} />
 }
