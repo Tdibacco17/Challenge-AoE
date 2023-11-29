@@ -1,5 +1,5 @@
 .container-card-detail {
-    padding: 1rem 2.5rem;
+    padding: 1rem;
     border: 1px solid var(--border-color);
     border-radius: 10px;
     display: flex;
@@ -23,7 +23,6 @@
         max-width: 90%;
         min-height: 14.5rem;
         max-height: 14.5rem;
-        padding: 1rem;
     }
 
     .title {
@@ -50,6 +49,7 @@
             align-items: center;
             gap: 0.75rem;
             width: 100%;
+            text-align: center;
         }
     }
 }

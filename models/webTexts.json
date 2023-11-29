@@ -1,0 +1,15 @@
+{
+    "navigation": {
+        "backUrl": {
+            "title": "Go back",
+            "url": "/"
+        }
+    },
+    "civilization": {
+        "details": {
+            "totalGamesPlayed": "Games played",
+            "totalGamesWon": "Games won"
+        }
+    },
+    "errorOcurred": "Unexpected error occurred"
+}

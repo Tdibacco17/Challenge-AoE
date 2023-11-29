@@ -4,6 +4,8 @@ import { CivilizationsContext } from "@/context/CivilizationsContextProvider"
 import { useContext } from "react"
 import Link from "next/link"
 import LoadingListComponent from "../LoadingListComponent/LoadingListComponent"
+import data from "@/models/webTexts.json"
+import ErrorOcurredComponent from "../ErrorOcurredComponent/ErrorOcurredComponent"
 export default function CivilizationListComponent({ loading }: { loading: boolean }) {
     const { civilizationsData } = useContext(CivilizationsContext) as CivilizationDataContextInterface
     return (
@@ -23,8 +25,7 @@ export default function CivilizationListComponent({ loading }: { loading: boolea
                                     {civilizationData.name}
                                 </Link>
                             })
-                            : <p className={styles["text-error"]}>Ocurrio un error inesperado</p>
-                        }
+                            : <ErrorOcurredComponent text={data.errorOcurred} />}
                     </>
                 )
             }
